@@ -1,280 +1,187 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolium</title>
+    <title>Portafolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-optical-sizing: auto;
-            font-style: normal;
-            align-items: center;
-            text-align: center;
-            background-image: url('backgroun.jpg');
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            height: 100vh;
-            font-family: "Edu AU VIC WA NT Hand", cursive;
-        }
-
-        nav {
-            background: rgba(51, 51, 51, 0.5);
-            padding: 1em;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: end;
-            align-items: center;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-        }
-
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            height: 3px;
-            width: 25px;
-            background: white;
-            margin-bottom: 4px;
-            border-radius: 2px;
-        }
-
-        nav ol {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            gap: 15px;
-        }
-
-        nav ol li {
-            position: relative;
-        }
-
-        nav ol li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: block;
-            border-radius: 4px;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        nav ol li a:hover {
-            background: #555;
-            transform: scale(1.1);
-        }
-
-        nav ol li a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 3px;
-            background: #f39c12;
-            left: 0;
-            bottom: -5px;
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s ease;
-        }
-
-        nav ol li a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-
-        .imgprofile {
-            width: 5vw;
-            height: 5vw;
-            border-radius: 50%;
-            margin-left: 2%;
-            cursor: pointer;
-            transition: transform 0.3s ease, position 0.3s ease, width 0.3s ease, height 0.3s ease;
-            z-index: 11;
-        }
-
-        .imgprofile img {
-            width: 100%;
-            border-radius: 50%;
-        }
-
-        .imgprofile img:hover {
-            transform: rotateY(180deg);
-        }
-
-        .skills-section {
-            background: rgba(51, 51, 51, 0.8);
-            color: white;
-            padding: 2em;
-            text-align: left;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 50vh;
-            position: relative;
-            width: 100%;
-        }
-
-        .skills-profile {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .skills-profile img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-        }
-
-        .skills-info {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .skills-info h2 {
-            margin: 0;
-        }
-
-        .skills-stats {
-            display: flex;
-            gap: 20px;
-        }
-
-        .skills-stats div {
-            text-align: center;
-        }
-
-        .skills-stats div span {
-            display: block;
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            nav ol {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: rgba(51, 51, 51, 0.9);
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 1em 0;
-            }
-
-            nav ol li {
-                margin-bottom: 15px;
-            }
-
-            nav ol li a {
-                text-align: center;
-                padding: 15px;
-            }
-
-            nav ol.showing {
-                display: flex;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <div class="imgprofile" id="profile-img">
-        <img src="navia.jpg" alt="">
-    </div>
-    <nav>
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <ol id="nav-links">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Portafolio</a></li>
-            <li><a href="#">Habilidades</a></li>
-            <li><a href="#">Contacto</a></li>
-        </ol>
-    </nav>
-    <div class="content">
-        <!-- Contenido principal aquí -->
-        <div style="height: 100vh;"></div> <!-- Simulación de contenido para hacer scroll -->
-    </div>
 
-    <div class="skills-section" id="skills-section">
-        <div class="skills-profile">
-            <img src="profile.jpg" alt="Profile Image">
-            <div class="skills-info">
-                <h2>Huesly</h2>
-                <p>Desarrollador Front-End</p>
-                <p>Especialidades: HTML, CSS, JavaScript, React, Blazor</p>
-                <div class="skills-stats">
-                    <div>
-                        <span>5</span>
-                        Proyectos
-                    </div>
-                    <div>
-                        <span>48</span>
-                        Seguidores
-                    </div>
-                    <div>
-                        <span>120</span>
-                        Siguiendo
-                    </div>
-                </div>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Edu AU VIC WA NT Hand", cursive;
+            color: white;
+            background: #333;
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(51, 51, 51, 0.8);
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f39c12;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            scroll-snap-align: start;
+            border-bottom: 2px solid #444;
+        }
+
+        section#hello {
+            background: #444;
+        }
+
+        section#projects {
+            background: #555;
+            flex-direction: column;
+        }
+
+        section#contact {
+            background: #666;
+        }
+
+        .projects-list {
+            display: flex;
+            overflow-x: auto;
+            width: 100%;
+        }
+
+        .project {
+            background: #222;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            flex: 0 0 300px;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.5);
+            border: 2px solid white;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+
+    <div class="cursor"></div>
+    <nav>
+        <ul>
+            <li><a href="#hello">Hello</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="hello">
+        <h1>Hello</h1>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects-list">
+            <div class="project">
+                <h3>Project 1</h3>
+                <p>Descripción del proyecto 1</p>
+            </div>
+            <div class="project">
+                <h3>Project 2</h3>
+                <p>Descripción del proyecto 2</p>
+            </div>
+            <div class="project">
+                <h3>Project 3</h3>
+                <p>Descripción del proyecto 3</p>
             </div>
         </div>
-    </div>
-
-    <div class="content">
-        <!-- Contenido principal aquí -->
-        <div style="height: 80vh;"></div> <!-- Simulación de contenido para hacer scroll -->
-    </div>
-
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+    </section>
     <script>
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            document.getElementById('nav-links').classList.toggle('showing');
-        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const cursor = document.querySelector('.cursor');
 
-        window.addEventListener('scroll', function () {
-            const profileImg = document.getElementById('profile-img');
-            const skillsSection = document.getElementById('skills-section');
-            const skillsSectionTop = skillsSection.offsetTop;
-            const skillsSectionHeight = skillsSection.offsetHeight;
+            document.addEventListener('mousemove', function (e) {
+                cursor.style.left = e.pageX + 'px';
+                cursor.style.top = e.pageY + window.scrollY + 'px';
+            });
 
-            if (window.scrollY >= skillsSectionTop && window.scrollY < skillsSectionTop + skillsSectionHeight) {
-                profileImg.style.position = 'fixed';
-                profileImg.style.top = '10px';
-                profileImg.style.width = '10vw';
-                profileImg.style.height = '10vw';
-            } else if (window.scrollY >= skillsSectionTop + skillsSectionHeight) {
-                profileImg.style.position = 'absolute';
-                profileImg.style.top = (skillsSectionTop + skillsSectionHeight - 50) + 'px'; // Ajusta según sea necesario
-                profileImg.style.width = '5vw';
-                profileImg.style.height = '5vw';
-            } else {
-                profileImg.style.position = 'fixed';
-                profileImg.style.top = '10px';
-                profileImg.style.width = '5vw';
-                profileImg.style.height = '5vw';
-            }
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.addEventListener('mouseenter', () => {
+                    cursor.style.width = '40px';
+                    cursor.style.height = '40px';
+                    cursor.style.background = '#f39c12';
+                    cursor.style.border = '2px solid #f39c12';
+                });
+                link.addEventListener('mouseleave', () => {
+                    cursor.style.width = '20px';
+                    cursor.style.height = '20px';
+                    cursor.style.background = 'rgba(255, 255, 255, 0.5)';
+                    cursor.style.border = '2px solid white';
+                });
+            });
+
+            const sections = document.querySelectorAll('section');
+            const options = {
+                threshold: 0.7
+            };
+
+            let observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('nav ul li a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        const activeLink = document.querySelector(`nav ul li a[href="#${entry.target.id}"]`);
+                        activeLink.classList.add('active');
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
         });
     </script>
 </body>
