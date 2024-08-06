@@ -8,10 +8,209 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Edu AU VIC WA NT Hand", cursive;
+        color: white;
+        background: #17153B;
+        overflow-x: hidden;
+        font-size: 1.5vw;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(23, 21, 59, 0.637);
+        z-index: 1000;
+        height: 3vw;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        margin: 0;
+        padding: 0.4vw;
+        height: 2vw;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #a25ae6;
+    }
+
+    .section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        scroll-snap-align: start;
+        border-bottom: 2px solid #444;
+    }
+
+    .section#hello {
+        background-image: url(img/backgroun.jpg);
+        background-size: 100% 105%;
+        background-position: center;
+    }
+
+    .section#projects {
+        background: #2E236C;
+        flex-direction: column;
+    }
+
+    .section#contact {
+        background: #433D8B;
+    }
+
+    .section#projects {
+        position: relative;
+    }
+
+    .skills {
+        position: absolute;
+        top: 2.5vw;
+        left: 3vw;
+        color: white;
+        width: 50vw;
+        height: 20vw;
+        background-color: rgb(200, 172, 214);
+        border-radius: 0.8vw;
+        padding: 1.5vw;
+        box-sizing: border-box;
+    }
+
+    .skill-bar {
+        margin: 1vw 0;
+    }
+
+    .skill-bar span {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 0.5vw;
+    }
+
+    .skill-bar div {
+        height: 2vw;
+        background-color: #fff;
+        border-radius: 1vw;
+        overflow: hidden;
+    }
+
+    .skill-bar div div {
+        height: 100%;
+        border-radius: 1vw;
+        background-color: #9146c4;
+    }
+
+    .profile {
+        position: absolute;
+        bottom: 2.5vw;
+        left: 3vw;
+        width: 50vw;
+        height: 20vw;
+        background-color: rgb(200, 172, 214);
+        border-radius: 0.8vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1.5vw;
+        box-sizing: border-box;
+    }
+
+    .profile img {
+        border-radius: 50%;
+        height: 12vw;
+        width: 12vw;
+        margin-right: 2vw;
+    }
+
+    .profile .about {
+        max-width: 30vw;
+    }
+
+    .profile .about h3 {
+        margin: 0;
+        padding: 0;
+        font-size: 2vw;
+    }
+
+    .projects-list {
+        display: flex;
+        overflow-x: auto;
+        width: 30%;
+        position: absolute;
+        flex-direction: column;
+        max-height: 46vw;
+        right: 3vw;
+        overflow-x: hidden;
+    }
+
+    .projects-list::-webkit-scrollbar {
+        width: 0.3vw;
+    }
+
+    .projects-list::-webkit-scrollbar-thumb {
+        background: #9146c4;
+        border-radius: 1vw;
+    }
+
+    .project {
+        background: #222;
+        padding: 1.1vw;
+        margin: 0.6vw;
+        border-radius: 0.8vw;
+        transition: transform 0.3s;
+        flex: 0 0 11vw;
+        opacity: 0;
+        transform: translateX(-100%);
+        animation: slideIn 0.5s forwards;
+    }
+
+    .project h3,
+    .project p {
+        margin: 0;
+    }
+
+    .project:hover {
+        transform: scale(1.05);
+    }
+
+    @keyframes slideIn {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .cursor {
+        position: fixed;
+        width: 20px;
+        height: 20px;
+        background: rgba(58, 52, 50, 0.479);
+        border: 2px solid white;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+        z-index: 10000;
+        transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+</style>
 
 <body>
     <div class="cursor"></div>
@@ -22,18 +221,38 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-    <section id="hello">
+    <div class="section" id="hello">
         <h1>Hello</h1>
-    </section>
-    <section id="projects">
+    </div>
+    <div class="section" id="projects">
         <h2>Projects</h2>
 
         <div class="profile">
-
-
+            <img src="img/profile.jpg" alt="Profile Image">
+            <div class="about">
+                <h3>Nombre Apellido</h3>
+                <p>Breve descripción sobre ti, tus intereses y tus habilidades. Puedes mencionar tu experiencia o algún dato interesante sobre ti.</p>
+            </div>
         </div>
         <div class="skills">
-
+            <div class="skill-bar">
+                <span>HTML</span>
+                <div>
+                    <div style="width: 90%;"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <span>CSS</span>
+                <div>
+                    <div style="width: 85%;"></div>
+                </div>
+            </div>
+            <div class="skill-bar">
+                <span>JavaScript</span>
+                <div>
+                    <div style="width: 80%;"></div>
+                </div>
+            </div>
         </div>
 
         <div class="projects-list">
@@ -50,18 +269,33 @@
                 <p>Descripción del proyecto 3</p>
             </div>
         </div>
-    </section>
-    <section id="contact">
+    </div>
+    <div class="section" id="contact">
         <h2>Contact</h2>
-    </section>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const cursor = document.querySelector('.cursor');
+            let mouseX = 0, mouseY = 0;
+            let cursorX = 0, cursorY = 0;
 
             document.addEventListener('mousemove', function (e) {
-                cursor.style.left = e.pageX + 'px';
-                cursor.style.top = e.pageY + window.scrollY + 'px';
+                mouseX = e.clientX;
+                mouseY = e.clientY;
             });
+
+            function updateCursor() {
+                cursorX += (mouseX - cursorX) * 0.1; // La fracción define la velocidad del retraso
+                cursorY += (mouseY - cursorY) * 0.1;
+
+                cursor.style.left = cursorX + 'px';
+                cursor.style.top = cursorY + 'px';
+
+                requestAnimationFrame(updateCursor);
+            }
+
+            updateCursor();
 
             document.querySelectorAll('nav ul li a').forEach(link => {
                 link.addEventListener('mouseenter', () => {
@@ -78,7 +312,7 @@
                 });
             });
 
-            const sections = document.querySelectorAll('section');
+            const sections = document.querySelectorAll('.section');
             const options = {
                 threshold: 0.7
             };
