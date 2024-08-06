@@ -1,10 +1,11 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Edu AU VIC WA NT Hand", cursive;
     color: white;
-    background: #333;
+    background: #17153B;
     overflow-x: hidden;
 }
 
@@ -12,9 +13,9 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(51, 51, 51, 0.8);
+    background: rgba(23, 21, 59, 0.637);
     z-index: 1000;
-    padding: 10px;
+    height: 3vw;
 }
 
 nav ul {
@@ -22,18 +23,19 @@ nav ul {
     display: flex;
     justify-content: space-around;
     margin: 0;
-    padding: 0;
+    padding: 0.4vw;
+    height: 2vw;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.4vw;
     transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #f39c12;
+    color: #a25ae6;
 }
 
 section {
@@ -46,23 +48,86 @@ section {
 }
 
 section#hello {
-    background: #444;
+    background-image: url(img/backgroun.jpg);
+    background-size: 100% 105%;
+    background-position: center;
 }
 
 section#projects {
-    background: #555;
+    background: #2E236C;
+    flex-direction: column;
 }
 
 section#contact {
-    background: #666;
+    background: #433D8B;
+}
+
+#projects {
+    position: relative;
+}
+
+.skills {
+    position: absolute;
+    top: 2.5vw;
+    left: 3vw;
+    font-size: 2.2vw;
+    color: white;
+    width: 50vw;
+    height: 22vw;
+    background-color: rgb(200, 172, 214);
+    border-radius: 0.8vw;
+}
+
+
+.profile {
+    position: absolute;
+    bottom: 2.5vw;
+    left: 3vw;
+    font-size: 2.2vw;
+    color: white;
+    width: 50vw;
+    height: 22vw;
+    background-color: rgb(200, 172, 214);
+    border-radius: 0.8vw;
+}
+
+#projects h2 {
+    position: absolute;
+    font-size: 2.2vw;
+    color: white;
+    margin: 0;
+    padding: 0;
+    top: 0vw;
+    right: 15vw;
+}
+
+.projects-list {
+    display: flex;
+    overflow-x: auto;
+    width: 30%;
+    position: absolute;
+    flex-direction: column;
+    max-height: 46vw;
+    right: 3vw;
+    overflow-x: hidden;
+}
+
+.projects-list::-webkit-scrollbar {
+    width: 0.3vw;
+}
+
+.projects-list::-webkit-scrollbar-thumb {
+    background: #9146c4;
+    border-radius: 1vw;
 }
 
 .project {
     background: #222;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
+    padding: 1.1vw;
+    margin: 0.6vw;
+    border-radius: 0.8vw;
     transition: transform 0.3s;
+    flex: 0 0 11vw;
 }
 
 .project:hover {
@@ -73,10 +138,12 @@ section#contact {
     position: fixed;
     width: 20px;
     height: 20px;
-    background: #fff;
+    background: rgba(58, 52, 50, 0.479);
+    border: 2px solid white;
     border-radius: 50%;
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 10000;
-    transition: width 0.3s, height 0.3s, background 0.3s;
+    transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

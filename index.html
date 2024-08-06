@@ -5,108 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Edu AU VIC WA NT Hand", cursive;
-            color: white;
-            background: #333;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(51, 51, 51, 0.8);
-            z-index: 1000;
-            padding: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: space-around;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #f39c12;
-        }
-
-        section {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            scroll-snap-align: start;
-            border-bottom: 2px solid #444;
-        }
-
-        section#hello {
-            background: #444;
-        }
-
-        section#projects {
-            background: #555;
-            flex-direction: column;
-        }
-
-        section#contact {
-            background: #666;
-        }
-
-        .projects-list {
-            display: flex;
-            overflow-x: auto;
-            width: 100%;
-        }
-
-        .project {
-            background: #222;
-            padding: 20px;
-            margin: 10px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            flex: 0 0 300px;
-        }
-
-        .project:hover {
-            transform: scale(1.05);
-        }
-
-        .cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: rgba(255, 255, 255, 0.5);
-            border: 2px solid white;
-            border-radius: 50%;
-            pointer-events: none;
-            transform: translate(-50%, -50%);
-            z-index: 10000;
-            transition: width 0.3s, height 0.3s, background 0.3s, border 0.3s;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-
     <div class="cursor"></div>
     <nav>
         <ul>
@@ -120,6 +27,15 @@
     </section>
     <section id="projects">
         <h2>Projects</h2>
+
+        <div class="profile">
+
+
+        </div>
+        <div class="skills">
+
+        </div>
+
         <div class="projects-list">
             <div class="project">
                 <h3>Project 1</h3>
@@ -151,14 +67,14 @@
                 link.addEventListener('mouseenter', () => {
                     cursor.style.width = '40px';
                     cursor.style.height = '40px';
-                    cursor.style.background = '#f39c12';
-                    cursor.style.border = '2px solid #f39c12';
+                    cursor.style.background = '#662f9b';
+                    cursor.style.border = '2px solid #662f9b';
                 });
                 link.addEventListener('mouseleave', () => {
                     cursor.style.width = '20px';
                     cursor.style.height = '20px';
-                    cursor.style.background = 'rgba(255, 255, 255, 0.5)';
-                    cursor.style.border = '2px solid white';
+                    cursor.style.background = 'rgba(58, 52, 50, 0.479)';
+                    cursor.style.border = '2px solid black';
                 });
             });
 
