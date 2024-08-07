@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
 </head>
 
 <style>
@@ -21,6 +24,27 @@
         color: white;
         background: #17153B;
         overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    body::-webkit-scrollbar {
+        width: 0.8vw;
+    }
+
+    body::-webkit-scrollbar-track {
+        background: #17153B;
+        border-radius: 1vw;
+    }
+
+    body::-webkit-scrollbar-thumb {
+        background: linear-gradient(#9146c4, #a25ae6);
+        border-radius: 1vw;
+        border: 2px solid #17153B;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(#a25ae6, #9146c4);
     }
 
     .navbar {
@@ -66,6 +90,7 @@
     .section#projects {
         background: #2E236C;
         flex-direction: column;
+        position: relative;
     }
 
     .section#contact {
@@ -77,9 +102,16 @@
         position: relative;
     }
 
+    .skillsh2 {
+        position: absolute;
+        left: 5vw;
+        top: 23vw;
+        font-size: 1.5vw;
+    }
+
     .skills {
         position: absolute;
-        bottom: 2.5vw;
+        bottom: 1.5vw;
         left: 3vw;
         color: white;
         width: 50vw;
@@ -98,10 +130,11 @@
         display: block;
         font-weight: bold;
         margin-bottom: 0.5vw;
+        font-size: 1.1vw;
     }
 
     .skill-bar div {
-        height: 2vw;
+        height: 1.2vw;
         background-color: #fff;
         border-radius: 1vw;
         overflow: hidden;
@@ -113,9 +146,16 @@
         background-color: #9146c4;
     }
 
+    .Infoh2 {
+        position: absolute;
+        left: 5vw;
+        top: -0.5vw;
+        font-size: 1.5vw;
+    }
+
     .profile {
         position: absolute;
-        top: 2.5vw;
+        top: 3.5vw;
         left: 3vw;
         width: 50vw;
         height: 20vw;
@@ -136,14 +176,43 @@
         margin-right: 2vw;
     }
 
+    .perfilimagen {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .profile:hover img {
+        transition: 0.5s;
+        transform: rotateY(180deg);
+    }
+
+    .profile:not(:hover) img {
+        transition: 0.5s;
+        transform: rotateY(0deg);
+    }
+
     .profile .about {
         max-width: 30vw;
+    }
+
+    .about p {
+        font-size: 1.1vw;
+        color: #251515;
+        margin: 0;
     }
 
     .profile .about h3 {
         margin: 0;
         padding: 0;
-        font-size: 2vw;
+        font-size: 1.7vw;
+    }
+
+    .projecth2 {
+        position: absolute;
+        right: 33vw;
+        top: -0.5vw;
+        font-size: 1.5vw;
     }
 
     .projects-list {
@@ -209,81 +278,147 @@
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
-    .contact-form {
+    .wrapper {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .wrapper .icon {
+        position: relative;
+        display: inline-block;
+        margin: 0 15px;
+        height: 5vw;
+        width: 5vw;
+        border-radius: 50%;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        font-size: 2vw;
+    }
+
+    .wrapper .icon .tooltip {
+        position: absolute;
+        top: 0;
+        transform: translateY(-10px);
+        background-color: #ffffff;
+        color: #000000;
+        padding: 5px 8px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.3s;
+        font-size: 1vw;
+        pointer-events: none;
+    }
+
+    .wrapper .icon:hover .tooltip {
+        opacity: 1;
+        transform: translateY(-20px);
+    }
+
+    .wrapper .icon .tooltip:before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 6px solid transparent;
+        border-top-color: #ffffff;
+    }
+
+    .wrapper .icon:hover {
+        background: linear-gradient(#a25ae6, #9146c4);
+        color: #ffffff;
+    }
+
+    .wrapper .icon:hover,
+    .wrapper .icon:hover span {
+        color: #ffffff;
+        font-weight: bold;
+    }
+
+    .wrapper .icon:hover span:before {
+        background: linear-gradient(#a25ae6, #9146c4);
+    }
+
+
+    .wrapper .icon:hover span i {
+        font-size: 2vw;
+    }
+
+    #redessociales .wrapper {
+        height: 100%;
+    }
+
+    .navbar .menu {
+        display: flex;
+        justify-content: space-around;
         align-items: center;
         width: 50%;
-        padding: 2vw;
-        background: rgba(23, 21, 59, 0.637);
-        border-radius: 1vw;
     }
 
-    .contact-form h3 {
-        margin-bottom: 1vw;
-    }
-
-    .contact-form input {
-        width: 80%;
-        padding: 1vw;
-        margin-bottom: 1vw;
-        border-radius: 0.5vw;
-        border: none;
-    }
-
-    .contact-form button {
-        padding: 1vw 2vw;
-        border: none;
-        border-radius: 0.5vw;
-        background: #662f9b;
-        color: white;
-        cursor: pointer;
-        transition: background 0.3s;
-    }
-
-    .contact-form button:hover {
-        background: #a25ae6;
+    .navbar .menu li {
+        list-style: none;
     }
 </style>
 
 <body>
     <div class="cursor"></div>
-    <div class="navbar">
-        <a href="#hello">Hello</a>
-        <a href="#projects">About me</a>
-        <a href="#contact">Contact</a>
-    </div>
-    <div class="section" id="hello">
-        <h1>Hello</h1>
-    </div>
-    <div class="section" id="projects">
-        <h2>Projects</h2>
 
+    <header class="navbar">
+        <ul class="menu">
+            <li><a href="#hello">Home</a></li>
+            <li><a href="#projects">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <section class="section" id="hello">
+        <h1>Hello I'm Huesly</h1>
+    </section>
+
+    <section class="section" id="projects">
+
+        <h2 class="Infoh2">Información Personal</h2>
         <div class="profile">
-            <img src="img/profile.jpg" alt="Profile Image">
-            <div class="about">
-                <h3>Nombre Apellido</h3>
-                <p>Breve descripción sobre ti, tus intereses y tus habilidades. Puedes mencionar tu experiencia o algún dato interesante sobre ti.</p>
+            <div class="perfilimagen">
+                <img src="img/navia.jpg" alt="Foto de Perfil">
+                <div class="about">
+                    <h3>About Me</h3>
+                    <p>Hi, I am a junior programmer passionate about web development. I have solid knowledge in HTML and
+                        CSS, and basic knowledge in JavaScript and React.
+                        HTML and CSS, and a basic knowledge in JavaScript and React. I also have experience with SQL
+                        Server and PostgreSQL. I'm just starting my career and I'm excited about the opportunities and
+                        challenges ahead. opportunities and challenges that await me. I am committed to continue learning and improving
+                        my skills to become a competent developer.</p>
+
+                </div>
             </div>
         </div>
 
-        <h2 class="Info">Me</h2>
+        <h2 class="projecth2">Proyectos</h2>
         <div class="projects-list">
             <div class="project">
-                <h3>Project 1</h3>
-                <p>Descripción del proyecto 1</p>
+                <h3>Proyecto 1</h3>
+                <p>Descripción del Proyecto 1.</p>
             </div>
             <div class="project">
-                <h3>Project 2</h3>
-                <p>Descripción del proyecto 2</p>
+                <h3>Proyecto 2</h3>
+                <p>Descripción del Proyecto 2.</p>
             </div>
             <div class="project">
-                <h3>Project 3</h3>
-                <p>Descripción del proyecto 3</p>
+                <h3>Proyecto 3</h3>
+                <p>Descripción del Proyecto 3.</p>
             </div>
         </div>
 
-        <h2 class="skills">Skills</h2>
+        <h2 class="skillsh2">Habilidades</h2>
         <div class="skills">
             <div class="skill-bar">
                 <span>HTML</span>
@@ -294,89 +429,71 @@
             <div class="skill-bar">
                 <span>CSS</span>
                 <div>
-                    <div style="width: 85%;"></div>
+                    <div style="width: 80%;"></div>
                 </div>
             </div>
             <div class="skill-bar">
                 <span>JavaScript</span>
                 <div>
-                    <div style="width: 80%;"></div>
+                    <div style="width: 70%;"></div>
                 </div>
             </div>
         </div>
+    </section>
 
-    </div>
-    <div class="section" id="contact">
-        <h2>Contact</h2>
-        <div class="contact-form">
-            <h3>Connect with me on Social Media</h3>
-            <input type="text" placeholder="GitHub" id="github">
-            <input type="text" placeholder="LinkedIn" id="linkedin">
-            <input type="text" placeholder="Discord" id="discord">
-            <input type="text" placeholder="Instagram" id="instagram">
-            <input type="text" placeholder="YouTube" id="youtube">
-            <input type="text" placeholder="Twitch" id="twitch">
-            <button type="submit">Submit</button>
+    <section class="section" id="contact">
+
+        <div id="redessociales" class="section">
+            <div class="wrapper">
+                <div class="icon instagram">
+                    <div class="tooltip">Instagram</div>
+                    <a href="https://www.instagram.com/snaylerr/" target="_blank"><span><i class="fab fa-instagram"></i></span></a>
+                </div>
+                <div class="icon discord">
+                    <div class="tooltip">Discord</div>
+                    <a href="https://discord.gg/Fupxnd5h8Z"><span><i class="fab fa-discord"></i></span></a>
+                </div>
+                <div class="icon github">
+                    <div class="tooltip">GitHub</div>
+                    <a href="https://github.com/Huesly"><span><i class="fab fa-github"></i></span></a>
+                </div>
+                <div class="icon youtube">
+                    <div class="tooltip">YouTube</div>
+                    <a href="https://www.youtube.com/@snayler"><span><i class="fab fa-youtube"></i></span></a>
+                </div>
+                <div class="icon twitch">
+                    <div class="tooltip">Twitch</div>
+                    <a href="https://www.twitch.tv/snaylerr"><span><i class="fab fa-twitch"></i></span></a>
+                </div>
+                <div class="icon linkedin">
+                    <div class="tooltip">LinkedIn</div>
+                    <a href="https://www.linkedin.com/in/huesly-carvajal-mantilla-356435208/"><span><i class="fab fa-linkedin"></i></span></a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const cursor = document.querySelector('.cursor');
-            let mouseX = 0, mouseY = 0;
-            let cursorX = 0, cursorY = 0;
+        const cursor = document.querySelector('.cursor');
 
-            document.addEventListener('mousemove', function (e) {
-                mouseX = e.clientX;
-                mouseY = e.clientY;
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.top = `${e.clientY}px`;
+            cursor.style.left = `${e.clientX}px`;
+        });
+
+        const links = document.querySelectorAll('.navbar a');
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.style.width = '50px';
+                cursor.style.height = '50px';
+                cursor.style.backgroundColor = '#a25ae6';
             });
 
-            function updateCursor() {
-                cursorX += (mouseX - cursorX) * 0.1; // La fracción define la velocidad del retraso
-                cursorY += (mouseY - cursorY) * 0.1;
-
-                cursor.style.left = cursorX + 'px';
-                cursor.style.top = cursorY + 'px';
-
-                requestAnimationFrame(updateCursor);
-            }
-
-            updateCursor();
-
-            document.querySelectorAll('.navbar a').forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    cursor.style.width = '40px';
-                    cursor.style.height = '40px';
-                    cursor.style.background = '#662f9b';
-                    cursor.style.border = '2px solid #662f9b';
-                });
-                link.addEventListener('mouseleave', () => {
-                    cursor.style.width = '20px';
-                    cursor.style.height = '20px';
-                    cursor.style.background = 'rgba(58, 52, 50, 0.479)';
-                    cursor.style.border = '2px solid black';
-                });
-            });
-
-            const sections = document.querySelectorAll('.section');
-            const options = {
-                threshold: 0.7
-            };
-
-            let observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        document.querySelectorAll('.navbar a').forEach(link => {
-                            link.classList.remove('active');
-                        });
-                        const activeLink = document.querySelector(`.navbar a[href="#${entry.target.id}"]`);
-                        activeLink.classList.add('active');
-                    }
-                });
-            }, options);
-
-            sections.forEach(section => {
-                observer.observe(section);
+            link.addEventListener('mouseleave', () => {
+                cursor.style.width = '20px';
+                cursor.style.height = '20px';
+                cursor.style.backgroundColor = 'rgba(58, 52, 50, 0.479)';
             });
         });
     </script>
