@@ -1,0 +1,188 @@
+li {
+  /*style the li tag*/
+  list-style-type: none;
+}
+
+.skills1 {
+  /*style the text*/
+  width: 22vw;
+  color: #fff;
+}
+
+.skills1 li {
+  /*set margin of li*/
+  margin: 20px 0;
+}
+
+.skills2 {
+  width: 22vw;
+  color: #fff;
+  position: absolute;
+  right: 1vw;
+  top: 1.5vw;
+}
+
+.skills2 li {
+  /*set margin of li*/
+  margin: 20px 0;
+}
+
+.bar {
+  /*style the bar*/
+  background-color: #353b48;
+  display: block;
+  height: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 0 10px #9000dd7a;
+}
+
+.bar span {
+  /*style the span tag*/
+  height: 2px;
+  float: left;
+  background-color: #a221e7;
+}
+
+.html {
+  /*set skills2 and animation of html*/
+  width: 93%;
+  animation: html 2s;
+}
+
+.css {
+  /*set skills2 and animation of css*/
+  width: 80%;
+  animation: css 2s;
+}
+
+.sql {
+  /*set skills2 and animation of css*/
+  width: 60%;
+  animation: css 2s;
+}
+
+.Bootstrap {
+  /*set skills2 and animation of jquery*/
+  width: 50%;
+  animation: jquery 2s;
+}
+
+.python {
+  /*set skills2 and animation of html*/
+  width: 55%;
+  animation: html 2s;
+}
+
+.Blazor {
+  /*set skills2 and animation of jquery*/
+  width: 50%;
+  animation: jquery 2s;
+}
+
+.javascript {
+  /*set skills2 and animation of javascript*/
+  width: 25%;
+  animation: javascript 2s;
+}
+
+.React {
+  /*set skills2 and animation of javascript*/
+  width: 15%;
+  animation: javascript 2s;
+}
+
+
+
+@keyframes html {
+
+  /*animate html skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes css {
+
+  /*animate css skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 93%;
+  }
+}
+
+@keyframes javascript {
+
+  /*animate javascript skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 50%;
+  }
+}
+
+@keyframes Bootstrap {
+
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+
+@keyframes python {
+
+  /*animate jquery skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+@keyframes sql {
+
+  /*animate jquery skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+@keyframes Blazor {
+
+  /*animate jquery skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}
+@keyframes React {
+
+  /*animate jquery skills2*/
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 30%;
+  }
+}

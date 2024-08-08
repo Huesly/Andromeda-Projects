@@ -80,12 +80,60 @@
         scroll-snap-align: start;
         border-bottom: 2px solid #444;
     }
-
-    .section#hello {
-        background-image: url(img/backgroun.jpg);
-        background-size: 100% 105%;
-        background-position: center;
+    .container h2{
+        font-size: 3vw;
+        position: absolute;
+        top: 45%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+
+    .container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .bubbles {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+
+    .bubbles span {
+        position: relative;
+        width: 1.5vw;
+        height: 1.5vw;
+        background: #6334af;
+        border-radius: 50%;
+        margin: 0 4px;
+        box-shadow: 0 0 10px #5812c969,
+            0 0 50px #6334af69,
+            0 0 100px #6334af69;
+        animation: animate 15s linear infinite;
+        animation-duration: calc(125s / var(--i));
+    }
+
+    .bubbles span:nth-child(even) {
+        background-color: #7d17a569;
+        box-shadow: 0 0 10px #9a10d169,
+            0 0 50px #7d17a569,
+            0 0 100px #7d17a569;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateY(100vh) scale(0);
+        }
+
+        100% {
+            transform: translateY(-10vh) scale(1);
+        }
+    }
+
+
+
 
     .section#projects {
         background: #2E236C;
@@ -379,65 +427,138 @@
         </ul>
     </header>
 
-    <section class="section" id="hello">
-        <h1>Hello I'm Huesly</h1>
-    </section>
+    <div class="container" id="hello">
+
+        <div class="bubbles">
+            <span style="--i:11;"></span>
+            <span style="--i:12;"></span>
+            <span style="--i:24;"></span>
+            <span style="--i:10;"></span>
+            <span style="--i:14;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+
+            <span style="--i:29;"></span>
+            <span style="--i:32;"></span>
+            <span style="--i:36;"></span>
+            <span style="--i:37;"></span>
+            <span style="--i:36;"></span>
+            <span style="--i:23;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:16;"></span>
+            <span style="--i:19;"></span>
+            <span style="--i:20;"></span>
+            <span style="--i:22;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:18;"></span>
+            <span style="--i:21;"></span>
+            <span style="--i:25;"></span>
+            <span style="--i:15;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:26;"></span>
+            <span style="--i:17;"></span>
+            <span style="--i:13;"></span>
+            <span style="--i:28;"></span>
+
+        </div>
+
+        <h2>Hello I'm huesly</h2>
+
+
+
+    </div>
 
     <section class="section" id="projects">
 
-        <h2 class="Infoh2">Información Personal</h2>
+        <h2 class="Infoh2">Personal Information</h2>
         <div class="profile">
             <div class="perfilimagen">
                 <img src="img/navia.jpg" alt="Foto de Perfil">
                 <div class="about">
                     <h3>About Me</h3>
                     <p>Hi, I am a junior programmer passionate about web development. I have solid knowledge in HTML and
-                        CSS, and basic knowledge in JavaScript and React.
-                        HTML and CSS, and a basic knowledge in JavaScript and React. I also have experience with SQL
+                        CSS, and basic knowledge in JavaScript and React. I also have experience with SQL
                         Server and PostgreSQL. I'm just starting my career and I'm excited about the opportunities and
-                        challenges ahead. opportunities and challenges that await me. I am committed to continue learning and improving
+                        challenges ahead. opportunities and challenges that await me. I am committed to continue
+                        learning and improving
                         my skills to become a competent developer.</p>
 
                 </div>
             </div>
         </div>
 
-        <h2 class="projecth2">Proyectos</h2>
+        <h2 class="projecth2">Proyects</h2>
         <div class="projects-list">
             <div class="project">
-                <h3>Proyecto 1</h3>
-                <p>Descripción del Proyecto 1.</p>
+                <h3>Appgro</h3>
+                <p>web page dedicated to show information about the company</p>
             </div>
             <div class="project">
-                <h3>Proyecto 2</h3>
-                <p>Descripción del Proyecto 2.</p>
+                <h3>Los Santos 360</h3>
+                <p>I can't give more information</p>
             </div>
             <div class="project">
-                <h3>Proyecto 3</h3>
-                <p>Descripción del Proyecto 3.</p>
+                <h3>Recicla y gana</h3>
+                <p>Demo for mobile video game</p>
             </div>
         </div>
 
-        <h2 class="skillsh2">Habilidades</h2>
+        <h2 class="skillsh2">Skills</h2>
+
         <div class="skills">
-            <div class="skill-bar">
-                <span>HTML</span>
-                <div>
-                    <div style="width: 90%;"></div>
-                </div>
+            <div class="skills1">
+                <li>
+                    <h3>HTML</h3><span class="bar"><span class="html"></span></span>
+                </li>
+
+                <li>
+                    <h3>CSS</h3><span class="bar"><span class="css"></span></span>
+                </li>
+
+                <li>
+                    <h3>Bootstrap</h3><span class="bar"><span class="Bootstrap"></span></span>
+                </li>
+
+                <li>
+                    <h3>JavaScript</h3><span class="bar"><span class="javascript"></span></span>
+                </li>
+
             </div>
-            <div class="skill-bar">
-                <span>CSS</span>
-                <div>
-                    <div style="width: 80%;"></div>
-                </div>
+
+            <div class="skills2">
+
+                <li>
+                    <h3>sql</h3><span class="bar"><span class="sql"></span></span>
+                </li>
+
+                <li>
+                    <h3>python</h3><span class="bar"><span class="python"></span></span>
+                </li>
+
+                <li>
+                    <h3>Blazor</h3><span class="bar"><span class="Blazor"></span></span>
+                </li>
+
+                <li>
+                    <h3>React</h3><span class="bar"><span class="React"></span></span>
+                </li>
+
             </div>
-            <div class="skill-bar">
-                <span>JavaScript</span>
-                <div>
-                    <div style="width: 70%;"></div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -447,27 +568,32 @@
             <div class="wrapper">
                 <div class="icon instagram">
                     <div class="tooltip">Instagram</div>
-                    <a href="https://www.instagram.com/snaylerr/" target="_blank"><span><i class="fab fa-instagram"></i></span></a>
+                    <a href="https://www.instagram.com/snaylerr/" target="_blank"><span><i
+                                class="fab fa-instagram"></i></span></a>
                 </div>
                 <div class="icon discord">
                     <div class="tooltip">Discord</div>
-                    <a href="https://discord.gg/Fupxnd5h8Z"><span><i class="fab fa-discord"></i></span></a>
+                    <a href="https://discord.gg/Fupxnd5h8Z" target="_blank"><span><i
+                                class="fab fa-discord"></i></span></a>
                 </div>
                 <div class="icon github">
                     <div class="tooltip">GitHub</div>
-                    <a href="https://github.com/Huesly"><span><i class="fab fa-github"></i></span></a>
+                    <a href="https://github.com/Huesly" target="_blank"><span><i class="fab fa-github"></i></span></a>
                 </div>
                 <div class="icon youtube">
                     <div class="tooltip">YouTube</div>
-                    <a href="https://www.youtube.com/@snayler"><span><i class="fab fa-youtube"></i></span></a>
+                    <a href="https://www.youtube.com/@snayler" target="_blank"><span><i
+                                class="fab fa-youtube"></i></span></a>
                 </div>
                 <div class="icon twitch">
                     <div class="tooltip">Twitch</div>
-                    <a href="https://www.twitch.tv/snaylerr"><span><i class="fab fa-twitch"></i></span></a>
+                    <a href="https://www.twitch.tv/snaylerr" target="_blank"><span><i
+                                class="fab fa-twitch"></i></span></a>
                 </div>
                 <div class="icon linkedin">
                     <div class="tooltip">LinkedIn</div>
-                    <a href="https://www.linkedin.com/in/huesly-carvajal-mantilla-356435208/"><span><i class="fab fa-linkedin"></i></span></a>
+                    <a href="https://www.linkedin.com/in/huesly-carvajal-mantilla-356435208/" target="_blank"><span><i
+                                class="fab fa-linkedin"></i></span></a>
                 </div>
             </div>
         </div>
