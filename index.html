@@ -80,7 +80,8 @@
         scroll-snap-align: start;
         border-bottom: 2px solid #444;
     }
-    .container h2{
+
+    .container h2 {
         font-size: 3vw;
         position: absolute;
         top: 45%;
@@ -108,18 +109,14 @@
         background: #6334af;
         border-radius: 50%;
         margin: 0 4px;
-        box-shadow: 0 0 10px #5812c969,
-            0 0 50px #6334af69,
-            0 0 100px #6334af69;
+        box-shadow: 0 0 10px #5812c969, 0 0 50px #6334af69, 0 0 100px #6334af69;
         animation: animate 15s linear infinite;
         animation-duration: calc(125s / var(--i));
     }
 
     .bubbles span:nth-child(even) {
         background-color: #7d17a569;
-        box-shadow: 0 0 10px #9a10d169,
-            0 0 50px #7d17a569,
-            0 0 100px #7d17a569;
+        box-shadow: 0 0 10px #9a10d169, 0 0 50px #7d17a569, 0 0 100px #7d17a569;
     }
 
     @keyframes animate {
@@ -132,9 +129,6 @@
         }
     }
 
-
-
-
     .section#projects {
         background: #2E236C;
         flex-direction: column;
@@ -144,10 +138,6 @@
     .section#contact {
         background: #433D8B;
         flex-direction: column;
-    }
-
-    .section#projects {
-        position: relative;
     }
 
     .skillsh2 {
@@ -274,6 +264,14 @@
         overflow-x: hidden;
     }
 
+    .project-card {
+        transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+        transform: scale(1.05) translateY(-5px) rotate(3deg);
+    }
+
     .projects-list::-webkit-scrollbar {
         width: 0.3vw;
     }
@@ -288,21 +286,18 @@
         padding: 1.1vw;
         margin: 0.6vw;
         border-radius: 0.8vw;
-        transition: transform 0.3s;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
         flex: 0 0 11vw;
         opacity: 0;
         transform: translateX(-100%);
-        animation: slideIn 0.5s forwards;
+        animation: slideIn 0.5s forwards, zoomIn 0.5s forwards;
         font-size: 0.8vw;
     }
 
-    .project h3,
-    .project p {
-        margin: 0;
-    }
-
     .project:hover {
-        transform: scale(1.05);
+        transform: scale(1.1) rotate(2deg);
+        box-shadow: 0 10px 20px rgba(144, 92, 224, 0.5);
+        background: #2E236C;
     }
 
     @keyframes slideIn {
@@ -311,6 +306,19 @@
             transform: translateX(0);
         }
     }
+
+    @keyframes zoomIn {
+        0% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
 
     .cursor {
         position: fixed;
@@ -362,47 +370,40 @@
         opacity: 0;
         transition: opacity 0.3s;
         font-size: 1vw;
-        pointer-events: none;
     }
 
     .wrapper .icon:hover .tooltip {
         opacity: 1;
-        transform: translateY(-20px);
-    }
-
-    .wrapper .icon .tooltip:before {
-        content: '';
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        border: 6px solid transparent;
-        border-top-color: #ffffff;
+        pointer-events: auto;
     }
 
     .wrapper .icon:hover {
-        background: linear-gradient(#a25ae6, #9146c4);
+        transform: translateY(-10px);
+    }
+
+    .wrapper .icon i {
+        color: #9146c4;
+    }
+
+    .wrapper .icon:hover i {
+        color: #a25ae6;
+    }
+
+    .wrapper .icon:hover .tooltip {
+        background-color: #a25ae6;
         color: #ffffff;
     }
 
-    .wrapper .icon:hover,
-    .wrapper .icon:hover span {
-        color: #ffffff;
-        font-weight: bold;
+    .fab.fa-whatsapp,
+    .fab.fa-youtube,
+    .fab.fa-instagram,
+    .fab.fa-linkedin,
+    .fab.fa-tiktok,
+    .fab.fa-github {
+        transition: 0.3s;
+        color: white;
     }
 
-    .wrapper .icon:hover span:before {
-        background: linear-gradient(#a25ae6, #9146c4);
-    }
-
-
-    .wrapper .icon:hover span i {
-        font-size: 2vw;
-    }
-
-    #redessociales .wrapper {
-        height: 100%;
-    }
 
     .navbar .menu {
         display: flex;
@@ -612,7 +613,7 @@
         links.forEach(link => {
             link.addEventListener('mouseenter', () => {
                 cursor.style.width = '50px';
-                cursor.style.height = '50px';
+                cursor.style.height = '50px';   
                 cursor.style.backgroundColor = '#a25ae6';
             });
 
@@ -623,6 +624,7 @@
             });
         });
     </script>
+    
 </body>
 
 </html>

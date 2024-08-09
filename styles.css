@@ -1,17 +1,16 @@
 li {
-  /*style the li tag*/
   list-style-type: none;
 }
 
 .skills1 {
-  /*style the text*/
   width: 22vw;
   color: #fff;
+  height: 90%;
+
 }
 
 .skills1 li {
-  /*set margin of li*/
-  margin: 20px 0;
+  margin: 0.2vw 0;
 }
 
 .skills2 {
@@ -20,27 +19,31 @@ li {
   position: absolute;
   right: 1vw;
   top: 1.5vw;
+  height: 90%;
+}
+
+.skills{
+  font-size: 0.9vw;
 }
 
 .skills2 li {
-  /*set margin of li*/
-  margin: 20px 0;
+  margin: 0.2vw 0;
 }
 
 .bar {
   /*style the bar*/
   background-color: #353b48;
   display: block;
-  height: 2px;
+  height: 0.2vw;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  border-radius: 3px;
+  border-radius: 0.2vw;
   overflow: hidden;
-  box-shadow: 0 0 10px #9000dd7a;
+  box-shadow: 0 0 0.1vw #9000dd7a;
 }
 
 .bar span {
   /*style the span tag*/
-  height: 2px;
+  height: 0.2vw;
   float: left;
   background-color: #a221e7;
 }
@@ -153,6 +156,7 @@ li {
     width: 30%;
   }
 }
+
 @keyframes sql {
 
   /*animate jquery skills2*/
@@ -164,6 +168,7 @@ li {
     width: 30%;
   }
 }
+
 @keyframes Blazor {
 
   /*animate jquery skills2*/
@@ -175,6 +180,7 @@ li {
     width: 50%;
   }
 }
+
 @keyframes React {
 
   /*animate jquery skills2*/
